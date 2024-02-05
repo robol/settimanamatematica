@@ -1,0 +1,8 @@
+jupyterlab
+numpy
+scipy
+pydub
+matplotlib
+ipywebrtc
+ipywidgets
+python-language-server
