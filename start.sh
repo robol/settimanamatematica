@@ -3,11 +3,11 @@
 
 set -e
 
-if [ ! -d env ]; then
-  python3 -mvenv env
+if [ ! -d /tmp/$USER/env ]; then
+  python3 -mvenv /tmp/$USER/env
 fi
 
-. env/bin/activate
+. /tmp/$USER/env/bin/activate
 
 pip3 install -r requirements.txt
 
