@@ -3,11 +3,16 @@
 
 set -e
 
-if [ ! -d /tmp/$USER/env ]; then
-  python3 -mvenv /tmp/$USER/env
+ENV_LOCATION="/tmp/$USER/env"
+if [ "$TMP" != "" ]; then
+  ENV_LOCATION="$TMP/$USER/env"
 fi
 
-. /tmp/$USER/env/bin/activate
+if [ ! -d "${ENV_LOCATION}" ]; then
+  python3 -mvenv "${ENV_LOCATION}"
+fi
+
+source "${ENV_LOCATION}/bin/activate"
 
 pip3 install -r requirements.txt
 
