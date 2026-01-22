@@ -115,12 +115,13 @@ def analizza_suono(nomefile, freq_base = None):
 
   x = ( np.array(range(0, l)) / l * Fs / 2);
 
-  fig = plt.figure(figsize = [ 15, 7 ])
+  fig = plt.figure(figsize = [ 25, 7 ])
   plt.subplot(1, 2, 1);
 
   ind = np.array(range(int(np.floor(Fs * 0.1)), int(np.floor(Fs * 0.12))));
   plt.plot(ind / Fs, s_intero[ind]);
   plt.xlabel('t');
+  plt.xticks(rotation=45, ha='right')
   plt.ylabel('s(t)');
   plt.title('Forma d\'onda');
 
